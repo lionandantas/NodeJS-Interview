@@ -8,6 +8,8 @@ import { FindByNameService } from 'src/modules/customers/services/find-by-name/f
 import { RemoveCustomerService } from 'src/modules/customers/services/remove-customer/remove-customer.service';
 import { UpdateNameCustomerService } from 'src/modules/customers/services/update-name-customer/update-name-customer.service';
 import UpdateNameCustomerDto from 'src/modules/customers/dtos/update-name-customer.dto';
+import { classToClass } from 'class-transformer';
+import { CustomerDto } from 'src/modules/customers/dtos/customer.dto';
 
 
 @ApiTags('customers')
@@ -30,34 +32,36 @@ export class CustomersController {
     type: String,
     description: 'The customers name',
   })
-  @ApiOkResponse({ description: 'Customer founded.', type: Customer })
+  @ApiOkResponse({ description: 'Customer founded.', type: CustomerDto })
   @ApiNotFoundResponse({
     description: 'returns the customer by the name searched.',
     type: String,
   })
-  async findByName(@Query('name') name: string): Promise<Customer> {
+  async findByName(@Query('name') name: string): Promise<CustomerDto> {
 
     const customer = await this.findByNameService.execute({ name: name });
 
-    return customer;
+    return CustomerDto.toDto(customer);
   }
 
   @Get(':id')
-  @ApiOkResponse({ description: 'Customer founded.', type: Customer })
-  async findById(@Param('id') id: number): Promise<Customer> {
-    return this.findByIdService.execute(id)
+  @ApiOkResponse({ description: 'Customer founded.', type: CustomerDto })
+  async findById(@Param('id') id: number): Promise<CustomerDto> {
+    const customer = await this.findByIdService.execute(id);
+
+    return CustomerDto.toDto(customer);
   }
 
   @Post()
   @ApiOperation({
     summary: 'Create a new customer',
   })
-  @ApiCreatedResponse({ description: 'Customer created.', type: Customer })
+  @ApiCreatedResponse({ description: 'Customer created.', type: CustomerDto })
   async create(
     @Body() request: CreateCustomerDto,
-  ): Promise<Customer> {
-
-    return this.createCustomerService.execute(request);
+  ): Promise<CustomerDto> {
+    const customer = await this.createCustomerService.execute(request);
+    return CustomerDto.toDto(customer);
   }
 
   @Delete(':id')
@@ -70,9 +74,10 @@ export class CustomersController {
 
   @ApiOperation({ summary: 'Update name customer' })
   @Put(':id')
-  async update(@Param('id') id: number, @Body() request: UpdateNameCustomerDto) {
+  async update(@Param('id') id: number, @Body() request: UpdateNameCustomerDto): Promise<CustomerDto> {
 
-    return this.updateNameCustomerService.execute(id, request);
+    const customer = await this.updateNameCustomerService.execute(id, request);
+    return CustomerDto.toDto(customer);
   }
 }
 

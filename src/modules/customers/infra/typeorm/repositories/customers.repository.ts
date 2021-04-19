@@ -21,7 +21,8 @@ class CustomerRepository implements ICustomerRepository {
     const customer = await this.ormRepository.findOne({
       where: {
         id: id
-      }
+      },
+      relations: ["city"],
     });
 
     return customer;
@@ -31,7 +32,8 @@ class CustomerRepository implements ICustomerRepository {
     const customer = await this.ormRepository.findOne({
       where: {
         name: Like(`%${name}%`)
-      }
+      },
+      relations: ["city"],
     });
 
     return customer;
