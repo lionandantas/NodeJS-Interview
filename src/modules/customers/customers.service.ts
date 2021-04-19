@@ -7,11 +7,24 @@ import { Repository } from 'typeorm';
 @Injectable()
 export class CustomersService extends BaseService<Customer> {
 
-    constructor(
-        @InjectRepository(Customer)
-        private readonly usersRepository: Repository<Customer>) {
-        super(usersRepository);
-    }
+  constructor(
+    @InjectRepository(Customer)
+    private readonly usersRepository: Repository<Customer>) {
+    super(usersRepository);
+  }
+
+
+
+  public async findByName(name: string): Promise<Customer | undefined> {
+
+    const customer = await this.usersRepository.findOne({
+      where: {
+        name: name
+      }
+    });
+
+    return customer;
+  }
 }
 
 

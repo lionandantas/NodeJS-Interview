@@ -6,10 +6,10 @@ import City from 'src/modules/cities/city.entity';
 
 
 @Module({
-    providers: [CitiesService],
-    controllers: [CitiesController],
-    exports: [CitiesService],
-    imports: [TypeOrmModule.forFeature([City])],
+  providers: [CitiesService],
+  controllers: [CitiesController],
+  exports: [CitiesService],
+  imports: [TypeOrmModule.forFeature([City])],
 })
 export class CitiesModule { }
 

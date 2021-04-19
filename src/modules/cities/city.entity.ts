@@ -4,10 +4,10 @@ import { Entity, Column } from 'typeorm';
 @Entity('cities')
 class City extends BaseEntity {
 
-    @Column()
-    name: string;
+  @Column()
+  name: string;
 
-    @Column()
-    state: string;
+  @Column()
+  state: string;
 }
 export default City;

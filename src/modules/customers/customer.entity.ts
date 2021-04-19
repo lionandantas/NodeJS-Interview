@@ -5,20 +5,20 @@ import City from '../cities/city.entity';
 @Entity('customers')
 class Customer extends BaseEntity {
 
-    @Column()
-    name: string;
+  @Column()
+  name: string;
 
-    @Column()
-    gender: string;
+  @Column()
+  gender: string;
 
-    @Column()
-    birthDate: Date;
+  @Column()
+  birthDate: Date;
 
-    @Column()
-    city_id: number;
+  @Column()
+  city_id: number;
 
-    @ManyToOne(() => City)
-    @JoinColumn({ name: 'city_id' })
-    city: City;
+  @ManyToOne(() => City)
+  @JoinColumn({ name: 'city_id' })
+  city: City;
 }
 export default Customer;

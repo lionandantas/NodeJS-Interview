@@ -9,7 +9,7 @@ import { CitiesService } from './cities.service';
 @Controller('cities')
 export class CitiesController extends BaseController<City>{
 
-    constructor(private readonly citiesService: CitiesService) {
-        super(citiesService)
-    }
+  constructor(private readonly citiesService: CitiesService) {
+    super(citiesService)
+  }
 }
