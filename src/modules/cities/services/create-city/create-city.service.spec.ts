@@ -1,3 +1,5 @@
+
+import { BusinessException } from 'src/shared';
 import FakeCitiesRepository from '../../repositories/fakes/fake-cities.respository';
 import { CreateCityService } from './create-city.service';
 
@@ -32,7 +34,7 @@ describe('CreateCityService', () => {
         name: "Vila Velha",
         state: "ES",
       }),
-    ).rejects.toBeInstanceOf(Error);
+    ).rejects.toBeInstanceOf(BusinessException);
   });
 
 });

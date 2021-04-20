@@ -1,4 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
+import { BusinessException } from 'src/shared';
 import UpdateNameCustomerDto from '../../dtos/update-name-customer.dto';
 import Customer from '../../infra/typeorm/entities/customer.entity';
 import ICustomerRepository from '../../repositories/Icustomers.repository';
@@ -10,7 +11,7 @@ export class UpdateNameCustomerService {
   public async execute(id: number, { name }: UpdateNameCustomerDto): Promise<Customer> {
     const customer = await this.customerRepository.find(id);
     if (customer == null)
-      throw new Error("customer not found");
+      throw new BusinessException("customer not found");
 
     customer.name = name;
 

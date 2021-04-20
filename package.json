@@ -28,6 +28,7 @@
     "@nestjs/swagger": "^4.8.0",
     "@nestjs/typeorm": "^7.1.5",
     "class-transformer": "^0.4.0",
+    "class-validator": "^0.13.1",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
@@ -64,6 +65,16 @@
       "json",
       "ts"
     ],
+     "modulePaths": [
+      "<rootDir>/shared/"
+    ],
+    "moduleNameMapper": {
+      "^src/(.*)$": "<rootDir>/$1"
+    },
+    "moduleDirectories": [
+    "node_modules",
+    "src"
+    ],
     "preset": "ts-jest",
     "rootDir": "src",
     "testRegex": ".spec.ts$",
@@ -73,10 +84,9 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",
     "collectCoverage": true,
-      "coverageReporters": [
+    "coverageReporters": [
       "text-summary",
       "lcov"
-      ]
+    ]
   }
-
 }

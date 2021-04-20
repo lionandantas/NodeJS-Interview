@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { ApiCreatedResponse, ApiNotFoundResponse, ApiOkResponse, ApiOperation, ApiQuery, ApiTags } from '@nestjs/swagger';
+import { CityDto } from 'src/modules/cities/dtos/city.dto';
 import CreateCityDto from 'src/modules/cities/dtos/create-city.dto';
 import City from 'src/modules/cities/infra/typeorm/entities/city.entity';
 import { CreateCityService } from 'src/modules/cities/services/create-city/create-city.service';
@@ -24,16 +25,16 @@ export class CitiesController {
     type: String,
     description: 'The city name',
   })
-  @ApiOkResponse({ description: 'City founded.', type: City })
+  @ApiOkResponse({ description: 'City founded.', type: CityDto })
   @ApiNotFoundResponse({
     description: 'returns the city by the name searched.',
     type: String,
   })
-  async findByName(@Query('name') name: string): Promise<City> {
+  async findByName(@Query('name') name: string): Promise<CityDto> {
 
     const city = await this.findByNameService.execute({ name: name });
 
-    return city;
+    return CityDto.toDto(city);
   }
 
 
@@ -51,22 +52,24 @@ export class CitiesController {
     description: 'returns the city by the state searched.',
     type: String,
   })
-  async findByState(@Query('state') state: string): Promise<City> {
+  async findByState(@Query('state') state: string): Promise<CityDto> {
 
     const city = await this.findByStateService.execute({ state: state });
 
-    return city;
+    return CityDto.toDto(city);
   }
 
   @Post()
   @ApiOperation({
     summary: 'Create a new city',
   })
-  @ApiCreatedResponse({ description: 'City created.', type: City })
+  @ApiCreatedResponse({ description: 'City created.', type: CityDto })
   async create(
     @Body() request: CreateCityDto,
-  ): Promise<City> {
+  ): Promise<CityDto> {
 
-    return this.createCityService.execute(request);
+    const city = await this.createCityService.execute(request);
+
+    return CityDto.toDto(city);
   }
 }

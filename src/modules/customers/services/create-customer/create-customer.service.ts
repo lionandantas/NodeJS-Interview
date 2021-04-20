@@ -1,4 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
+import { BusinessException } from 'src/shared';
 import CreateCustomerDto from '../../dtos/create-customer.dto';
 import Customer from '../../infra/typeorm/entities/customer.entity';
 import ICustomerRepository from '../../repositories/Icustomers.repository';
@@ -13,7 +14,7 @@ export class CreateCustomerService {
     const customerExist = await this.customerRepository.findByName(data.name);
 
     if (customerExist) {
-      throw new Error("Customer already exists");
+      throw new BusinessException("Customer already exists");
     }
 
     const customer = await this.customerRepository.create(data);

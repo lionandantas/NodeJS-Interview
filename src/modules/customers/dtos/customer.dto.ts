@@ -18,13 +18,6 @@ export class CustomerDto {
   name: string;
 
   @Expose()
-  @ApiProperty({
-    description: 'The unique email of the user',
-    example: 'john.doe@gmail.com',
-  })
-  email: string;
-
-  @Expose()
   @ApiProperty({ description: 'The age of the customer' })
   age: number;
 

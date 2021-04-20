@@ -18,9 +18,9 @@ class Customer {
   birthDate: Date;
 
   @Column()
-  city_id: number;
+  cityId: number;
   @OneToOne(() => City)
-  @JoinColumn({ name: 'city_id' })
+  @JoinColumn({ name: 'cityId' })
   city: City;
 
   @Expose({ name: "age" })
@@ -39,9 +39,9 @@ class Customer {
   }
 
   @CreateDateColumn()
-  created_at: Date;
+  createdAt: Date;
 
   @UpdateDateColumn()
-  updated_at: Date;
+  updatedAt: Date;
 }
 export default Customer;

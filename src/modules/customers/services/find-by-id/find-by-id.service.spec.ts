@@ -15,7 +15,7 @@ describe('FindByIdService', () => {
   it("should be able to show the customer", async () => {
     const customer = await fakeCustomerRepository.create({
       name: "Lionan Dantas",
-      city_id: 1,
+      cityId: 1,
       gender: 'Masculino',
       birthDate: new Date('1991-03-30')
     });

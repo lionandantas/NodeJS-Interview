@@ -1,4 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
+import { BusinessException } from 'src/shared/http/exception/business-execption';
 import City from '../../infra/typeorm/entities/city.entity';
 import ICitiesRepository from '../../repositories/Icities.repository';
 
@@ -17,7 +18,7 @@ export class CreateCityService {
     const cityExist = await this.citiesRepository.findByName(name);
 
     if (cityExist) {
-      throw new Error("City already exists");
+      throw new BusinessException("City already exists");
     }
 
 

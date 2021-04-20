@@ -38,7 +38,7 @@ Este projeto contem 1 API REST
 
 #### 🎲 Rodando o Backend (servidor)
 
-# Execute o comando a baixo no MySQL para criar a base de dados
+#### Execute o comando a baixo no MySQL para criar a base de dados
 ```sql
 
 create database interview;

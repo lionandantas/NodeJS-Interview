@@ -17,7 +17,7 @@ describe('RemoveCustomerService', () => {
     const name = "Lionan Dantas";
     const customer = await fakeCustomerRepository.create({
       name: name,
-      city_id: 1,
+      cityId: 1,
       gender: 'Masculino',
       birthDate: new Date('1991-03-30')
     });

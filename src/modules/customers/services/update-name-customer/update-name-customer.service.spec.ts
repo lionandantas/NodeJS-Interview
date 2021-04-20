@@ -17,7 +17,7 @@ describe('UpdateNameCustomerService', () => {
     const nameChanged = "Lionan Ferreira";
     const customer = await fakeCustomerRepository.create({
       name: "Lionan Dantas",
-      city_id: 1,
+      cityId: 1,
       gender: 'Masculino',
       birthDate: new Date('1991-03-30')
     });
