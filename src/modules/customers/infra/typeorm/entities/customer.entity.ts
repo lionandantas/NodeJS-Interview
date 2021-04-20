@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { Entity, Column, JoinColumn, OneToOne, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, Column, JoinColumn, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToOne } from 'typeorm';
 import City from '../../../../cities/infra/typeorm/entities/city.entity';
 
 @Entity('customers')
@@ -19,22 +19,30 @@ class Customer {
 
   @Column()
   cityId: number;
-  @OneToOne(() => City)
+  @ManyToOne(() => City)
   @JoinColumn({ name: 'cityId' })
   city: City;
 
   @Expose({ name: "age" })
-  age(): number {
-    const timeDiff = Math.abs(Date.now() - this.birthDate.getTime());
+  get age(): number {
+    if (this.birthDate == null)
+      return 0;
+    const timeDiff = Math.abs(Date.now() - new Date(this.birthDate).getTime());
     return Math.floor((timeDiff / (1000 * 3600 * 24)) / 365);
+
   }
 
   @Expose({ name: "region" })
-  region(): string {
+  get region(): string {
+    if (this.city == null)
+      return null;
     return this.city.state;
   }
+
   @Expose({ name: "cityName" })
-  cityName(): string {
+  get cityName(): string {
+    if (this.city == null)
+      return null;
     return this.city.name;
   }
 

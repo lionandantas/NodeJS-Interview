@@ -24,6 +24,9 @@ describe('CreateCustomerService', () => {
     });
 
     expect(customer).toHaveProperty("id");
+    expect(customer.age).toBe(30);
+    expect(customer.name).toBe("Lionan Dantas");
+
   });
 
   it("should not be able to create two customer with the same name", async () => {
