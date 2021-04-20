@@ -33,9 +33,7 @@
 
 ## 🚀 Como executar o projeto
 
-Este projeto contem:
-
-1. Backend
+Este projeto contem 1 API REST
 
 #### 🎲 Rodando o Backend (servidor)
 
@@ -92,7 +90,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
  <sub><b>Lionan Dantas</b></sub></a>
  <br />
 
-[![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/lionandantas/)](https://www.linkedin.com/in/lionandantas/) 
+[![Linkedin Badge](https://img.shields.io/badge/-Lionan-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/lionandantas/)](https://www.linkedin.com/in/lionandantas/) 
 [![Gmail Badge](https://img.shields.io/badge/-lionandantas@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:lionandantas@gmail.com)](mailto:lionandantas@gmail.com)
 
 ---
