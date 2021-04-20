@@ -1,18 +1,30 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import FakeCustomerRepository from '../../repositories/fakes/fake-customers.repository';
 import { UpdateNameCustomerService } from './update-name-customer.service';
 
 describe('UpdateNameCustomerService', () => {
   let service: UpdateNameCustomerService;
+  let fakeCustomerRepository: FakeCustomerRepository;
 
   beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      providers: [UpdateNameCustomerService],
-    }).compile();
+    fakeCustomerRepository = new FakeCustomerRepository();
 
-    service = module.get<UpdateNameCustomerService>(UpdateNameCustomerService);
+    service = new UpdateNameCustomerService(
+      fakeCustomerRepository
+    );
   });
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
+  it("should be able to change name customer", async () => {
+    const nameChanged = "Lionan Ferreira";
+    const customer = await fakeCustomerRepository.create({
+      name: "Lionan Dantas",
+      city_id: 1,
+      gender: 'Masculino',
+      birthDate: new Date('1991-03-30')
+    });
+
+    const customerChanged = await service.execute(customer.id, { name: nameChanged });
+
+    expect(customerChanged.name).toBe(nameChanged);
   });
+
 });

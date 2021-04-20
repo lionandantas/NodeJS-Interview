@@ -1,7 +1,7 @@
 import createCityDto from "../../dtos/create-city.dto";
 import City from "../../infra/typeorm/entities/city.entity";
 import ICitiesRepository from "../Icities.repository";
-import { uuid } from "uuidv4";
+import { v4 as uuid_v4 } from "uuid";
 
 class FakeCitiesRepository implements ICitiesRepository {
   private cities: City[] = [];
@@ -24,7 +24,7 @@ class FakeCitiesRepository implements ICitiesRepository {
     Object.assign(
       city,
       {
-        id: uuid(),
+        id: uuid_v4(),
       },
       data,
     );
@@ -44,6 +44,7 @@ class FakeCitiesRepository implements ICitiesRepository {
 
     return city;
   }
-}
 
+
+}
 export default FakeCitiesRepository;

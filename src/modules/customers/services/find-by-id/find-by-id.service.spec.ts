@@ -1,18 +1,27 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import FakeCustomerRepository from '../../repositories/fakes/fake-customers.repository';
 import { FindByIdService } from './find-by-id.service';
 
 describe('FindByIdService', () => {
   let service: FindByIdService;
-
+  let fakeCustomerRepository: FakeCustomerRepository;
   beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      providers: [FindByIdService],
-    }).compile();
+    fakeCustomerRepository = new FakeCustomerRepository();
 
-    service = module.get<FindByIdService>(FindByIdService);
+    service = new FindByIdService(
+      fakeCustomerRepository
+    );
   });
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
+  it("should be able to show the customer", async () => {
+    const customer = await fakeCustomerRepository.create({
+      name: "Lionan Dantas",
+      city_id: 1,
+      gender: 'Masculino',
+      birthDate: new Date('1991-03-30')
+    });
+
+    const customerFind = await service.execute(customer.id);
+
+    expect(customerFind.name).toBe("Lionan Dantas");
   });
 });

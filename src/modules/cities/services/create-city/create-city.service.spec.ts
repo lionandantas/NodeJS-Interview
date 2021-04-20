@@ -14,14 +14,14 @@ describe('CreateCityService', () => {
   });
 
   it("should be able to create a new city", async () => {
-    const user = await service.execute({
+    const city = await service.execute({
       name: "Vila Velha",
       state: "ES",
     });
-    expect(user).toHaveProperty("id");
+    expect(city).toHaveProperty("id");
   });
 
-  it("should not be able to create two users with the same email", async () => {
+  it("should not be able to create two city with the same name", async () => {
     await service.execute({
       name: "Vila Velha",
       state: "ES",
