@@ -1,4 +1,4 @@
-import { Inject, Injectable } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import createCustomerDto from "src/modules/customers/dtos/create-customer.dto";
 import ICustomerRepository from "src/modules/customers/repositories/Icustomers.repository";

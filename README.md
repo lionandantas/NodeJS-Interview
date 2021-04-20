@@ -1,76 +1,105 @@
+
+<h4 align="center"> 
+	🚧  API CRUD 🚧
+</h4>
+
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
+ <a href="#-sobre-o-projeto">Sobre</a> •
+ <a href="#-funcionalidades">Funcionalidades</a> •
+ <a href="#-como-executar-o-projeto">Como executar</a> • 
+ <a href="#-tecnologias">Tecnologias</a> • 
+ <a href="#user-content--licença">Licença</a>
 </p>
 
-[travis-image]: https://api.travis-ci.org/nestjs/nest.svg?branch=master
-[travis-url]: https://travis-ci.org/nestjs/nest
-[linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
-[linux-url]: https://travis-ci.org/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://api.travis-ci.org/nestjs/nest.svg?branch=master" alt="Travis" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://img.shields.io/travis/nestjs/nest/master.svg?label=linux" alt="Linux" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#5" alt="Coverage" /></a>
-<a href="https://gitter.im/nestjs/nestjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"><img src="https://badges.gitter.im/nestjs/nestjs.svg" alt="Gitter" /></a>
-<a href="https://opencollective.com/nest#backer"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
-  <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+
+## 💻 Sobre o projeto
+
+♻️ Ecoleta - é uma forma de conectar empresas e entidades de coleta de resíduos orgânicos e inorgânicos as pessoas que precisam descartar seus resíduos de maneira ecológica.
+
+---
+
+## ⚙️ Funcionalidades
+
+- [x] Cadastrar cidade
+- [x] Consultar cidade pelo nome
+- [x] Consultar cidade pelo estado
+- [x] Cadastrar cliente
+- [x] Consultar cliente pelo nome
+- [x] Consultar cliente pelo Id
+- [x] Remover cliente
+- [x] Alterar o nome do cliente
+
+---
+
+## 🚀 Como executar o projeto
+
+Este projeto contem:
+
+1. Backend
+
+#### 🎲 Rodando o Backend (servidor)
+
+```bash
+
+# Vá para a pasta principal
+$ cd interview
+
+# Instale as dependências
+$ yarn
+
+# Execute a aplicação em modo de desenvolvimento
+$ yarn start:dev
+
+# O servidor inciará na porta:3000 - acesse http://localhost:3000 
+
+# Executando testes
+
+$ yarn start:test
+
+
+```
+<p align="center">
+  <a href="https://github.com/tgmarinho/README-ecoleta/blob/master/Insomnia_API_Ecoletajson.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+## 🛠 Tecnologias
 
-```bash
-$ npm install
-```
+As seguintes ferramentas foram usadas na construção do projeto:
 
-## Running the app
+#### [](https://github.com/tgmarinho/Ecoleta#server-nodejs--typescript)**Server**  ([NodeJS](https://nodejs.org/en/)  +  [TypeScript](https://www.typescriptlang.org/))
 
-```bash
-# development
-$ npm run start
+-   **[Express](https://expressjs.com/)**
+-   **[CORS](https://expressjs.com/en/resources/middleware/cors.html)**
+-   **[KnexJS](http://knexjs.org/)**
+-   **[SQLite](https://github.com/mapbox/node-sqlite3)**
+-   **[ts-node](https://github.com/TypeStrong/ts-node)**
+-   **[dotENV](https://github.com/motdotla/dotenv)**
+-   **[Multer](https://github.com/expressjs/multer)**
+-   **[Celebrate](https://github.com/arb/celebrate)**
+-   **[Joi](https://github.com/hapijs/joi)**
 
-# watch mode
-$ npm run start:dev
+> Veja o arquivo  [package.json](https://github.com/tgmarinho/README-ecoleta/blob/master/server/package.json)
 
-# production mode
-$ npm run start:prod
-```
 
-## Test
+## 🦸 Autor
 
-```bash
-# unit tests
-$ npm run test
+<a href="#">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/2438072?v=4
+" width="100px;" alt=""/>
+ <br />
+ <sub><b>Lionan Dantas</b></sub></a>
+ <br />
 
-# e2e tests
-$ npm run test:e2e
+[![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/lionandantas/)](https://www.linkedin.com/in/lionandantas/) 
+[![Gmail Badge](https://img.shields.io/badge/-lionandantas@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:lionandantas@gmail.com)](mailto:lionandantas@gmail.com)
 
-# test coverage
-$ npm run test:cov
-```
+---
 
-## Support
+## 📝 Licença
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Este projeto esta sobe a licença [MIT](./LICENSE).
 
-## Stay in touch
+Feito por Lionan Dantas 👋🏽 [Entre em contato!](https://www.linkedin.com/in/lionandantas/)
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-  Nest is [MIT licensed](LICENSE).
-"# NodeJS-Interview" 

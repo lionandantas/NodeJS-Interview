@@ -1,5 +1,4 @@
 import { Expose } from 'class-transformer';
-import { BaseEntity } from 'src/shared/base/base.entity';
 import { Entity, Column, JoinColumn, OneToOne, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import City from '../../../../cities/infra/typeorm/entities/city.entity';
 
