@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
-import { ApiCreatedResponse, ApiNotFoundResponse, ApiOkResponse, ApiOperation, ApiQuery, ApiTags, ApiUnprocessableEntityResponse } from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiNotFoundResponse, ApiOkResponse, ApiOperation, ApiQuery, ApiTags } from '@nestjs/swagger';
 import CreateCityDto from 'src/modules/cities/dtos/create-city.dto';
 import City from 'src/modules/cities/infra/typeorm/entities/city.entity';
 import { CreateCityService } from 'src/modules/cities/services/create-city/create-city.service';

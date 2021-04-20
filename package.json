@@ -33,14 +33,15 @@
     "rimraf": "^3.0.2",
     "rxjs": "^6.5.4",
     "swagger-ui-express": "^4.1.6",
-    "typeorm": "^0.2.32"
+    "typeorm": "^0.2.32",
+    "uuidv4": "^6.2.7"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.0.0",
     "@nestjs/schematics": "^7.0.0",
     "@nestjs/testing": "^7.0.0",
     "@types/express": "^4.17.3",
-    "@types/jest": "26.0.10",
+    "@types/jest": "^26.0.22",
     "@types/node": "^13.9.1",
     "@types/supertest": "^2.0.8",
     "@typescript-eslint/eslint-plugin": "3.9.1",
@@ -48,10 +49,10 @@
     "eslint": "7.7.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
-    "jest": "26.4.2",
+    "jest": "^26.6.3",
     "prettier": "^1.19.1",
     "supertest": "^4.0.2",
-    "ts-jest": "26.2.0",
+    "ts-jest": "^26.5.5",
     "ts-loader": "^6.2.1",
     "ts-node": "9.0.0",
     "tsconfig-paths": "^3.9.0",
@@ -63,6 +64,7 @@
       "json",
       "ts"
     ],
+    "preset": "ts-jest",
     "rootDir": "src",
     "testRegex": ".spec.ts$",
     "transform": {
@@ -71,4 +73,5 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   }
+
 }

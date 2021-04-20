@@ -1,6 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
 import City from '../../infra/typeorm/entities/city.entity';
-import CitiesRepository from '../../infra/typeorm/repositories/cities.repository';
 import ICitiesRepository from '../../repositories/Icities.repository';
 
 interface IRequest {

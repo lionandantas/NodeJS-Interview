@@ -1,18 +1,32 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import FakeCitiesRepository from '../../repositories/fakes/fake-cities.respository';
 import { FindByStateService } from './find-by-state.service';
 
 describe('FindByStateService', () => {
   let service: FindByStateService;
+  let fakeCitiesRepository: FakeCitiesRepository;
 
   beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      providers: [FindByStateService],
-    }).compile();
+    fakeCitiesRepository = new FakeCitiesRepository();
 
-    service = module.get<FindByStateService>(FindByStateService);
+    service = new FindByStateService(
+      fakeCitiesRepository
+    );
   });
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
+
+  it("should be able to show the city", async () => {
+    const city = await fakeCitiesRepository.create({
+      name: "Vila Velha",
+      state: "ES",
+    });
+
+    const profile = await service.execute({
+      state: city.state
+    });
+
+    expect(profile.name).toBe("Vila Velha");
   });
+
 });
+
+

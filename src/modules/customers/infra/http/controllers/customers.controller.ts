@@ -1,6 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
 import { ApiCreatedResponse, ApiNotFoundResponse, ApiOkResponse, ApiOperation, ApiQuery, ApiTags } from '@nestjs/swagger';
-import Customer from '../../typeorm/entities/customer.entity';
 import CreateCustomerDto from 'src/modules/customers/dtos/create-customer.dto';
 import { CreateCustomerService } from 'src/modules/customers/services/create-customer/create-customer.service';
 import { FindByIdService } from 'src/modules/customers/services/find-by-id/find-by-id.service';
@@ -8,7 +7,6 @@ import { FindByNameService } from 'src/modules/customers/services/find-by-name/f
 import { RemoveCustomerService } from 'src/modules/customers/services/remove-customer/remove-customer.service';
 import { UpdateNameCustomerService } from 'src/modules/customers/services/update-name-customer/update-name-customer.service';
 import UpdateNameCustomerDto from 'src/modules/customers/dtos/update-name-customer.dto';
-import { classToClass } from 'class-transformer';
 import { CustomerDto } from 'src/modules/customers/dtos/customer.dto';
 
 

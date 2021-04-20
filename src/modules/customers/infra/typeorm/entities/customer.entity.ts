@@ -1,10 +1,13 @@
 import { Expose } from 'class-transformer';
 import { BaseEntity } from 'src/shared/base/base.entity';
-import { Entity, Column, JoinColumn, OneToOne } from 'typeorm';
+import { Entity, Column, JoinColumn, OneToOne, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import City from '../../../../cities/infra/typeorm/entities/city.entity';
 
 @Entity('customers')
-class Customer extends BaseEntity {
+class Customer {
+
+  @PrimaryGeneratedColumn()
+  id: number;
 
   @Column()
   name: string;
@@ -23,7 +26,7 @@ class Customer extends BaseEntity {
 
   @Expose({ name: "age" })
   age(): number {
-    var timeDiff = Math.abs(Date.now() - this.birthDate.getTime());
+    const timeDiff = Math.abs(Date.now() - this.birthDate.getTime());
     return Math.floor((timeDiff / (1000 * 3600 * 24)) / 365);
   }
 
@@ -35,5 +38,11 @@ class Customer extends BaseEntity {
   cityName(): string {
     return this.city.name;
   }
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 }
 export default Customer;
