@@ -14,7 +14,8 @@
 
 ## 💻 Sobre o projeto
 
-♻️ Ecoleta - é uma forma de conectar empresas e entidades de coleta de resíduos orgânicos e inorgânicos as pessoas que precisam descartar seus resíduos de maneira ecológica.
+Este projeto consiste é uma API rest simples onde terá algumas operações como: consultar, detalhar, alterar e remover.
+
 
 ---
 
@@ -37,6 +38,14 @@ Este projeto contem 1 API REST
 
 #### 🎲 Rodando o Backend (servidor)
 
+# Execute o comando a baixo no MySQL para criar a base de dados
+```sql
+
+create database interview;
+
+```
+
+
 ```bash
 
 # Vá para a pasta principal
@@ -50,35 +59,26 @@ $ yarn start:dev
 
 # O servidor inciará na porta:3000 - acesse http://localhost:3000 
 
+# Para acessar a documentação da API - acess http://localhost:3000/api/docs/#/
+
 # Executando testes
 
 $ yarn start:test
 
 
 ```
-<p align="center">
-  <a href="https://github.com/tgmarinho/README-ecoleta/blob/master/Insomnia_API_Ecoletajson.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
-</p>
-
-
 
 ## 🛠 Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-#### [](https://github.com/tgmarinho/Ecoleta#server-nodejs--typescript)**Server**  ([NodeJS](https://nodejs.org/en/)  +  [TypeScript](https://www.typescriptlang.org/))
+#### [](https://github.com/lionandantas/NodeJS-Interview#server-nodejs--typescript)**Server**  ([NodeJS](https://nodejs.org/en/)  +  [TypeScript](https://www.typescriptlang.org/))
 
--   **[Express](https://expressjs.com/)**
--   **[CORS](https://expressjs.com/en/resources/middleware/cors.html)**
--   **[KnexJS](http://knexjs.org/)**
--   **[SQLite](https://github.com/mapbox/node-sqlite3)**
--   **[ts-node](https://github.com/TypeStrong/ts-node)**
--   **[dotENV](https://github.com/motdotla/dotenv)**
--   **[Multer](https://github.com/expressjs/multer)**
--   **[Celebrate](https://github.com/arb/celebrate)**
--   **[Joi](https://github.com/hapijs/joi)**
+-   **[Nest](https://nestjs.com/)**
+-   **[MySQL](https://www.mysql.com/)**
+-   **[Jest](https://jestjs.io/pt-BR/)**
 
-> Veja o arquivo  [package.json](https://github.com/tgmarinho/README-ecoleta/blob/master/server/package.json)
+> Veja o arquivo  [package.json](https://github.com/lionandantas/NodeJS-Interview/blob/main/package.json)
 
 
 ## 🦸 Autor
